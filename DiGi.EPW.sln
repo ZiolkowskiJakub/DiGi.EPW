@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiGi.EPW", "DiGi.EPW\DiGi.EPW.csproj", "{04208EE5-865B-4371-B063-3EAEC9838E13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04208EE5-865B-4371-B063-3EAEC9838E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04208EE5-865B-4371-B063-3EAEC9838E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04208EE5-865B-4371-B063-3EAEC9838E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04208EE5-865B-4371-B063-3EAEC9838E13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8574F8BC-C6AF-4634-999A-A1A01ED1B262}
+	EndGlobalSection
+EndGlobal
