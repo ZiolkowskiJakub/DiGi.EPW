@@ -2,17 +2,17 @@
 {
     public class Location
     {
-        private string city = null;
-        private string country = null;
-        private double elevation = 0;
-        private double latitude = 0;
-        private double longitude = 0;
-        private string region = null;
-        private string source = null;
-        private double timeZone = 0;
-        private string wHO = null;
+        private readonly string? city = null;
+        private readonly string? country = null;
+        private readonly double elevation = 0;
+        private readonly double latitude = 0;
+        private readonly double longitude = 0;
+        private readonly string? region = null;
+        private readonly string? source = null;
+        private readonly double timeZone = 0;
+        private readonly string? wHO = null;
         
-        public Location(string city, string region, string country, string source, string wHO, double latitude, double longitude, double timeZone, double elevation)
+        public Location(string? city, string? region, string? country, string? source, string? wHO, double latitude, double longitude, double timeZone, double elevation)
         {
             this.city = city;
             this.region = region;
@@ -25,7 +25,7 @@
             this.elevation = elevation;
         }
 
-        public string City
+        public string? City
         {
             get
             {
@@ -33,7 +33,7 @@
             }
         }
 
-        public string Country
+        public string? Country
         {
             get
             {
@@ -65,7 +65,7 @@
             }
         }
 
-        public string Region
+        public string? Region
         {
             get
             {
@@ -73,7 +73,7 @@
             }
         }
         
-        public string Source
+        public string? Source
         {
             get
             {
@@ -89,7 +89,7 @@
             }
         }
 
-        public string WHO
+        public string? WHO
         {
             get
             {

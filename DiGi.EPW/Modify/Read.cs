@@ -4,7 +4,7 @@ namespace DiGi.EPW
 {
     public static partial class Modify
     {
-        public static EPWFile Read(string path)
+        public static EPWFile? Read(string? path)
         {
             if(string.IsNullOrWhiteSpace(path) || !System.IO.File.Exists(path))
             {
@@ -17,7 +17,7 @@ namespace DiGi.EPW
                 return null;
             }
 
-            Location location = null;
+            Location? location = null;
 
             int count = lines.Length;
 
@@ -40,7 +40,9 @@ namespace DiGi.EPW
                     location = Create.Location(lines, index, out int index_Next);
                     if(location != null && index_Next != -1)
                     {
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                         index = index_Next;
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
                     }
 
                     break;

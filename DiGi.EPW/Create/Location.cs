@@ -4,7 +4,7 @@ namespace DiGi.EPW
 {
     public static partial class Create
     {
-        public static Location Location(string[] lines, int index, out int index_Next)
+        public static Location? Location(string[]? lines, int index, out int index_Next)
         {
             index_Next = -1;
 
@@ -22,15 +22,15 @@ namespace DiGi.EPW
 
             string[] values = line.Split(',');
 
-            string city = null;
-            string country = null;
+            string? city = null;
+            string? country = null;
             double elevation = 0;
             double latitude = 0;
             double longitude = 0;
-            string source = null;
+            string? source = null;
             double timeZone = 0;
-            string wHO = null;
-            string region = null;
+            string? wHO = null;
+            string? region = null;
 
             if (values.Length > 1)
             {

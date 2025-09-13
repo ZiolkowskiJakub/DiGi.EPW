@@ -5,7 +5,7 @@ namespace DiGi.EPW
 {
     public static partial class Create
     {
-        public static Dictionary<string, EPWFile> EPWFiles(string directory, System.IO.SearchOption searchOption)
+        public static Dictionary<string, EPWFile>? EPWFiles(string? directory, System.IO.SearchOption searchOption)
         {
             if (string.IsNullOrWhiteSpace(directory) || !System.IO.Directory.Exists(directory))
             {
@@ -18,10 +18,10 @@ namespace DiGi.EPW
                 return null;
             }
 
-            Dictionary<string, EPWFile> result = new Dictionary<string, EPWFile>();
+            Dictionary<string, EPWFile> result = [];
             foreach (string path in paths)
             {
-                EPWFile ePWFile = EPW.Modify.Read(path);
+                EPWFile? ePWFile = Modify.Read(path);
                 if (ePWFile == null)
                 {
                     continue;

@@ -2,9 +2,9 @@
 {
     public class EPWFile
     {
-        public Location Location { get; }
+        public Location? Location { get; }
 
-        public EPWFile(Location location)
+        public EPWFile(Location? location)
         {
             Location = location;
         }
