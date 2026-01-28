@@ -11,7 +11,7 @@
         private readonly string? source = null;
         private readonly double timeZone = 0;
         private readonly string? wHO = null;
-        
+
         public Location(string? city, string? region, string? country, string? source, string? wHO, double latitude, double longitude, double timeZone, double elevation)
         {
             this.city = city;
@@ -72,7 +72,7 @@
                 return region;
             }
         }
-        
+
         public string? Source
         {
             get

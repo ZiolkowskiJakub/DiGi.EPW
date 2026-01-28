@@ -13,7 +13,7 @@ namespace DiGi.EPW
                 return null;
             }
 
-            if(index < 0 || index > lines.Length)
+            if (index < 0 || index > lines.Length)
             {
                 return null;
             }
@@ -93,6 +93,5 @@ namespace DiGi.EPW
 
             return new Location(city, region, country, source, wHO, latitude, longitude, timeZone, elevation);
         }
-
     }
 }

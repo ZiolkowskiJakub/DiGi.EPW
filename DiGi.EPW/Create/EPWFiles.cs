@@ -31,8 +31,6 @@ namespace DiGi.EPW
             }
 
             return result;
-
         }
     }
 }
-

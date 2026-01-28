@@ -6,13 +6,13 @@ namespace DiGi.EPW
     {
         public static EPWFile? Read(string? path)
         {
-            if(string.IsNullOrWhiteSpace(path) || !System.IO.File.Exists(path))
+            if (string.IsNullOrWhiteSpace(path) || !System.IO.File.Exists(path))
             {
                 return null;
             }
 
             string[] lines = System.IO.File.ReadAllLines(path);
-            if(lines == null || lines.Length == 0)
+            if (lines == null || lines.Length == 0)
             {
                 return null;
             }
@@ -23,13 +23,13 @@ namespace DiGi.EPW
 
             int index = 0;
 
-            while(index < count)
+            while (index < count)
             {
                 string line = lines[index].Trim();
 
                 string line_Upper = line.ToUpper();
 
-                if(line_Upper.StartsWith("!") || line_Upper.StartsWith("\\"))
+                if (line_Upper.StartsWith("!") || line_Upper.StartsWith("\\"))
                 {
                     index++;
                     continue;
@@ -38,7 +38,7 @@ namespace DiGi.EPW
                 if (line_Upper.StartsWith(Constans.HeaderName.Location))
                 {
                     location = Create.Location(lines, index, out int index_Next);
-                    if(location != null && index_Next != -1)
+                    if (location != null && index_Next != -1)
                     {
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
                         index = index_Next;
@@ -54,6 +54,4 @@ namespace DiGi.EPW
             return new EPWFile(location);
         }
     }
-
 }
-
