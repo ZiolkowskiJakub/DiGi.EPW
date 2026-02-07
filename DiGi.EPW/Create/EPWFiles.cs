@@ -12,7 +12,7 @@ namespace DiGi.EPW
                 return null;
             }
 
-            string[] paths = System.IO.Directory.GetFiles(directory, string.Format("*.{0}", Constans.FileExtension.EPWFile), searchOption);
+            string[] paths = System.IO.Directory.GetFiles(directory, string.Format("*.{0}", Constants.FileExtension.EPWFile), searchOption);
             if (paths == null || paths.Length == 0)
             {
                 return null;

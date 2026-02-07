@@ -1,4 +1,4 @@
-﻿namespace DiGi.EPW.Constans
+﻿namespace DiGi.EPW.Constants
 {
     public static class FileExtension
     {

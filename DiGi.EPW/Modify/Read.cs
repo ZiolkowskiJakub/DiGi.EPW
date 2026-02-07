@@ -35,7 +35,7 @@ namespace DiGi.EPW
                     continue;
                 }
 
-                if (line_Upper.StartsWith(Constans.HeaderName.Location))
+                if (line_Upper.StartsWith(Constants.HeaderName.Location))
                 {
                     location = Create.Location(lines, index, out int index_Next);
                     if (location != null && index_Next != -1)
