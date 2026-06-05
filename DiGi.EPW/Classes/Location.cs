@@ -1,5 +1,8 @@
-﻿namespace DiGi.EPW.Classes
+namespace DiGi.EPW.Classes
 {
+    /// <summary>
+    /// Represents a geographical location including coordinates, elevation, and administrative details.
+    /// </summary>
     public class Location
     {
         private readonly string? city = null;
@@ -12,6 +15,18 @@
         private readonly double timeZone = 0;
         private readonly string? wHO = null;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Location"/> class.
+        /// </summary>
+        /// <param name="city">The name of the city.</param>
+        /// <param name="region">The region or administrative area.</param>
+        /// <param name="country">The name of the country.</param>
+        /// <param name="source">The source of the location data.</param>
+        /// <param name="wHO">The World Health Organization designation.</param>
+        /// <param name="latitude">The latitude coordinate.</param>
+        /// <param name="longitude">The longitude coordinate.</param>
+        /// <param name="timeZone">The time zone offset.</param>
+        /// <param name="elevation">The elevation above sea level.</param>
         public Location(string? city, string? region, string? country, string? source, string? wHO, double latitude, double longitude, double timeZone, double elevation)
         {
             this.city = city;
@@ -25,6 +40,9 @@
             this.elevation = elevation;
         }
 
+        /// <summary>
+        /// Gets the name of the city.
+        /// </summary>
         public string? City
         {
             get
@@ -33,6 +51,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the name of the country.
+        /// </summary>
         public string? Country
         {
             get
@@ -41,6 +62,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the elevation of the location.
+        /// </summary>
         public double Elevation
         {
             get
@@ -49,6 +73,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the latitude coordinate of the location.
+        /// </summary>
         public double Latitude
         {
             get
@@ -57,6 +84,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the longitude coordinate of the location.
+        /// </summary>
         public double Longitude
         {
             get
@@ -65,6 +95,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the region or administrative area of the location.
+        /// </summary>
         public string? Region
         {
             get
@@ -73,6 +106,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the source from which the location data was retrieved.
+        /// </summary>
         public string? Source
         {
             get
@@ -81,6 +117,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the time zone offset for the location.
+        /// </summary>
         public double TimeZone
         {
             get
@@ -89,6 +128,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the World Health Organization (WHO) designation for the location.
+        /// </summary>
         public string? WHO
         {
             get

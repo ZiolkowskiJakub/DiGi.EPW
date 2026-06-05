@@ -1,9 +1,16 @@
-﻿using DiGi.EPW.Classes;
+using DiGi.EPW.Classes;
 
 namespace DiGi.EPW
 {
     public static partial class Create
     {
+        /// <summary>
+        /// Parses location data from a specific line within an array of strings to create a <see cref="Location"/> object.
+        /// </summary>
+        /// <param name="lines">The array of strings containing the raw data lines.</param>
+        /// <param name="index">The index of the line to be processed.</param>
+        /// <param name="index_Next">An output parameter that returns the updated index after processing.</param>
+        /// <returns>A <see cref="Location"/> instance if the input is valid; otherwise, null.</returns>
         public static Location? Location(string[]? lines, int index, out int index_Next)
         {
             index_Next = -1;
