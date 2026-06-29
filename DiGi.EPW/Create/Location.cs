@@ -96,7 +96,7 @@ namespace DiGi.EPW
                 }
             }
 
-            index_Next = index++;
+            index_Next = index + 1;
 
             return new Location(city, region, country, source, wHO, latitude, longitude, timeZone, elevation);
         }

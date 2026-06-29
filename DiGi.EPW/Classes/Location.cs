@@ -1,18 +1,40 @@
+using DiGi.Core.Classes;
+using DiGi.EPW.Interfaces;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
+
 namespace DiGi.EPW.Classes
 {
     /// <summary>
     /// Represents a geographical location including coordinates, elevation, and administrative details.
     /// </summary>
-    public class Location
+    public class Location : SerializableObject, IEPWSerializableObject
     {
+        [JsonInclude, JsonPropertyName(nameof(City))]
         private readonly string? city = null;
+
+        [JsonInclude, JsonPropertyName(nameof(Country))]
         private readonly string? country = null;
+
+        [JsonInclude, JsonPropertyName(nameof(Elevation))]
         private readonly double elevation = 0;
+
+        [JsonInclude, JsonPropertyName(nameof(Latitude))]
         private readonly double latitude = 0;
+
+        [JsonInclude, JsonPropertyName(nameof(Longitude))]
         private readonly double longitude = 0;
+
+        [JsonInclude, JsonPropertyName(nameof(Region))]
         private readonly string? region = null;
+
+        [JsonInclude, JsonPropertyName(nameof(Source))]
         private readonly string? source = null;
+
+        [JsonInclude, JsonPropertyName(nameof(TimeZone))]
         private readonly double timeZone = 0;
+
+        [JsonInclude, JsonPropertyName(nameof(WHO))]
         private readonly string? wHO = null;
 
         /// <summary>
@@ -41,8 +63,39 @@ namespace DiGi.EPW.Classes
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Location"/> class by copying an existing instance.
+        /// </summary>
+        /// <param name="location">The source location to copy from.</param>
+        public Location(Location? location)
+            : base(location)
+        {
+            if (location != null)
+            {
+                city = location.city;
+                region = location.region;
+                country = location.country;
+                source = location.source;
+                wHO = location.wHO;
+                latitude = location.latitude;
+                longitude = location.longitude;
+                timeZone = location.timeZone;
+                elevation = location.elevation;
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Location"/> class from a JSON object.
+        /// </summary>
+        /// <param name="jsonObject">The JSON object containing location data.</param>
+        public Location(JsonObject? jsonObject)
+            : base(jsonObject)
+        {
+        }
+
+        /// <summary>
         /// Gets the name of the city.
         /// </summary>
+        [JsonIgnore]
         public string? City
         {
             get
@@ -54,6 +107,7 @@ namespace DiGi.EPW.Classes
         /// <summary>
         /// Gets the name of the country.
         /// </summary>
+        [JsonIgnore]
         public string? Country
         {
             get
@@ -65,6 +119,7 @@ namespace DiGi.EPW.Classes
         /// <summary>
         /// Gets the elevation of the location.
         /// </summary>
+        [JsonIgnore]
         public double Elevation
         {
             get
@@ -76,6 +131,7 @@ namespace DiGi.EPW.Classes
         /// <summary>
         /// Gets the latitude coordinate of the location.
         /// </summary>
+        [JsonIgnore]
         public double Latitude
         {
             get
@@ -87,6 +143,7 @@ namespace DiGi.EPW.Classes
         /// <summary>
         /// Gets the longitude coordinate of the location.
         /// </summary>
+        [JsonIgnore]
         public double Longitude
         {
             get
@@ -98,6 +155,7 @@ namespace DiGi.EPW.Classes
         /// <summary>
         /// Gets the region or administrative area of the location.
         /// </summary>
+        [JsonIgnore]
         public string? Region
         {
             get
@@ -109,6 +167,7 @@ namespace DiGi.EPW.Classes
         /// <summary>
         /// Gets the source from which the location data was retrieved.
         /// </summary>
+        [JsonIgnore]
         public string? Source
         {
             get
@@ -120,6 +179,7 @@ namespace DiGi.EPW.Classes
         /// <summary>
         /// Gets the time zone offset for the location.
         /// </summary>
+        [JsonIgnore]
         public double TimeZone
         {
             get
@@ -131,6 +191,7 @@ namespace DiGi.EPW.Classes
         /// <summary>
         /// Gets the World Health Organization (WHO) designation for the location.
         /// </summary>
+        [JsonIgnore]
         public string? WHO
         {
             get
