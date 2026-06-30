@@ -47,8 +47,7 @@ namespace DiGi.EPW
                     break;
                 }
 
-                double depth = 0;
-                double.TryParse(values[pointer], NumberStyles.Any, CultureInfo.InvariantCulture, out depth);
+                double.TryParse(values[pointer], NumberStyles.Any, CultureInfo.InvariantCulture, out double depth);
 
                 double? conductivity = null;
                 if (double.TryParse(values[pointer + 1], NumberStyles.Any, CultureInfo.InvariantCulture, out double conductivity_Temp))

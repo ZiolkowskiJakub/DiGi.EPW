@@ -78,8 +78,7 @@ namespace DiGi.EPW
                 coolingValues = [];
                 for (int i = index_Cooling + 1; i < index_End; i++)
                 {
-                    double coolingValue = 0;
-                    double.TryParse(values[i], NumberStyles.Any, CultureInfo.InvariantCulture, out coolingValue);
+                    double.TryParse(values[i], NumberStyles.Any, CultureInfo.InvariantCulture, out double coolingValue);
                     coolingValues.Add(coolingValue);
                 }
             }
@@ -89,8 +88,7 @@ namespace DiGi.EPW
                 extremeValues = [];
                 for (int i = index_Extremes + 1; i < values.Length; i++)
                 {
-                    double extremeValue = 0;
-                    double.TryParse(values[i], NumberStyles.Any, CultureInfo.InvariantCulture, out extremeValue);
+                    double.TryParse(values[i], NumberStyles.Any, CultureInfo.InvariantCulture, out double extremeValue);
                     extremeValues.Add(extremeValue);
                 }
             }

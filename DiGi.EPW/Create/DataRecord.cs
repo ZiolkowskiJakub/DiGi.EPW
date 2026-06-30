@@ -38,108 +38,75 @@ namespace DiGi.EPW
                 return null;
             }
 
-            int year = 0;
-            int.TryParse(values[0], NumberStyles.Any, CultureInfo.InvariantCulture, out year);
+            int.TryParse(values[0], NumberStyles.Any, CultureInfo.InvariantCulture, out int year);
 
-            int month = 0;
-            int.TryParse(values[1], NumberStyles.Any, CultureInfo.InvariantCulture, out month);
+            int.TryParse(values[1], NumberStyles.Any, CultureInfo.InvariantCulture, out int month);
 
-            int day = 0;
-            int.TryParse(values[2], NumberStyles.Any, CultureInfo.InvariantCulture, out day);
+            int.TryParse(values[2], NumberStyles.Any, CultureInfo.InvariantCulture, out int day);
 
-            int hour = 0;
-            int.TryParse(values[3], NumberStyles.Any, CultureInfo.InvariantCulture, out hour);
+            int.TryParse(values[3], NumberStyles.Any, CultureInfo.InvariantCulture, out int hour);
 
-            int minute = 0;
-            int.TryParse(values[4], NumberStyles.Any, CultureInfo.InvariantCulture, out minute);
+            int.TryParse(values[4], NumberStyles.Any, CultureInfo.InvariantCulture, out int minute);
 
             string? dataSourceAndUncertaintyFlags = values[5];
 
-            double dryBulbTemperature = 0;
-            double.TryParse(values[6], NumberStyles.Any, CultureInfo.InvariantCulture, out dryBulbTemperature);
+            double.TryParse(values[6], NumberStyles.Any, CultureInfo.InvariantCulture, out double dryBulbTemperature);
 
-            double dewPointTemperature = 0;
-            double.TryParse(values[7], NumberStyles.Any, CultureInfo.InvariantCulture, out dewPointTemperature);
+            double.TryParse(values[7], NumberStyles.Any, CultureInfo.InvariantCulture, out double dewPointTemperature);
 
-            double relativeHumidity = 0;
-            double.TryParse(values[8], NumberStyles.Any, CultureInfo.InvariantCulture, out relativeHumidity);
+            double.TryParse(values[8], NumberStyles.Any, CultureInfo.InvariantCulture, out double relativeHumidity);
 
-            double atmosphericStationPressure = 0;
-            double.TryParse(values[9], NumberStyles.Any, CultureInfo.InvariantCulture, out atmosphericStationPressure);
+            double.TryParse(values[9], NumberStyles.Any, CultureInfo.InvariantCulture, out double atmosphericStationPressure);
 
-            double extraterrestrialHorizontalRadiation = 0;
-            double.TryParse(values[10], NumberStyles.Any, CultureInfo.InvariantCulture, out extraterrestrialHorizontalRadiation);
+            double.TryParse(values[10], NumberStyles.Any, CultureInfo.InvariantCulture, out double extraterrestrialHorizontalRadiation);
 
-            double extraterrestrialDirectNormalRadiation = 0;
-            double.TryParse(values[11], NumberStyles.Any, CultureInfo.InvariantCulture, out extraterrestrialDirectNormalRadiation);
+            double.TryParse(values[11], NumberStyles.Any, CultureInfo.InvariantCulture, out double extraterrestrialDirectNormalRadiation);
 
-            double horizontalInfraredRadiationIntensity = 0;
-            double.TryParse(values[12], NumberStyles.Any, CultureInfo.InvariantCulture, out horizontalInfraredRadiationIntensity);
+            double.TryParse(values[12], NumberStyles.Any, CultureInfo.InvariantCulture, out double horizontalInfraredRadiationIntensity);
 
-            double globalHorizontalRadiation = 0;
-            double.TryParse(values[13], NumberStyles.Any, CultureInfo.InvariantCulture, out globalHorizontalRadiation);
+            double.TryParse(values[13], NumberStyles.Any, CultureInfo.InvariantCulture, out double globalHorizontalRadiation);
 
-            double directNormalRadiation = 0;
-            double.TryParse(values[14], NumberStyles.Any, CultureInfo.InvariantCulture, out directNormalRadiation);
+            double.TryParse(values[14], NumberStyles.Any, CultureInfo.InvariantCulture, out double directNormalRadiation);
 
-            double diffuseHorizontalRadiation = 0;
-            double.TryParse(values[15], NumberStyles.Any, CultureInfo.InvariantCulture, out diffuseHorizontalRadiation);
+            double.TryParse(values[15], NumberStyles.Any, CultureInfo.InvariantCulture, out double diffuseHorizontalRadiation);
 
-            double globalHorizontalIlluminance = 0;
-            double.TryParse(values[16], NumberStyles.Any, CultureInfo.InvariantCulture, out globalHorizontalIlluminance);
+            double.TryParse(values[16], NumberStyles.Any, CultureInfo.InvariantCulture, out double globalHorizontalIlluminance);
 
-            double directNormalIlluminance = 0;
-            double.TryParse(values[17], NumberStyles.Any, CultureInfo.InvariantCulture, out directNormalIlluminance);
+            double.TryParse(values[17], NumberStyles.Any, CultureInfo.InvariantCulture, out double directNormalIlluminance);
 
-            double diffuseHorizontalIlluminance = 0;
-            double.TryParse(values[18], NumberStyles.Any, CultureInfo.InvariantCulture, out diffuseHorizontalIlluminance);
+            double.TryParse(values[18], NumberStyles.Any, CultureInfo.InvariantCulture, out double diffuseHorizontalIlluminance);
 
-            double zenithLuminance = 0;
-            double.TryParse(values[19], NumberStyles.Any, CultureInfo.InvariantCulture, out zenithLuminance);
+            double.TryParse(values[19], NumberStyles.Any, CultureInfo.InvariantCulture, out double zenithLuminance);
 
-            double windDirection = 0;
-            double.TryParse(values[20], NumberStyles.Any, CultureInfo.InvariantCulture, out windDirection);
+            double.TryParse(values[20], NumberStyles.Any, CultureInfo.InvariantCulture, out double windDirection);
 
-            double windSpeed = 0;
-            double.TryParse(values[21], NumberStyles.Any, CultureInfo.InvariantCulture, out windSpeed);
+            double.TryParse(values[21], NumberStyles.Any, CultureInfo.InvariantCulture, out double windSpeed);
 
-            int totalSkyCover = 0;
-            int.TryParse(values[22], NumberStyles.Any, CultureInfo.InvariantCulture, out totalSkyCover);
+            int.TryParse(values[22], NumberStyles.Any, CultureInfo.InvariantCulture, out int totalSkyCover);
 
-            int opaqueSkyCover = 0;
-            int.TryParse(values[23], NumberStyles.Any, CultureInfo.InvariantCulture, out opaqueSkyCover);
+            int.TryParse(values[23], NumberStyles.Any, CultureInfo.InvariantCulture, out int opaqueSkyCover);
 
-            double visibility = 0;
-            double.TryParse(values[24], NumberStyles.Any, CultureInfo.InvariantCulture, out visibility);
+            double.TryParse(values[24], NumberStyles.Any, CultureInfo.InvariantCulture, out double visibility);
 
-            double ceilingHeight = 0;
-            double.TryParse(values[25], NumberStyles.Any, CultureInfo.InvariantCulture, out ceilingHeight);
+            double.TryParse(values[25], NumberStyles.Any, CultureInfo.InvariantCulture, out double ceilingHeight);
 
-            int presentWeatherObservation = 0;
-            int.TryParse(values[26], NumberStyles.Any, CultureInfo.InvariantCulture, out presentWeatherObservation);
+            int.TryParse(values[26], NumberStyles.Any, CultureInfo.InvariantCulture, out int presentWeatherObservation);
 
             string? presentWeatherCodes = values[27];
 
-            double precipitableWater = 0;
-            double.TryParse(values[28], NumberStyles.Any, CultureInfo.InvariantCulture, out precipitableWater);
+            double.TryParse(values[28], NumberStyles.Any, CultureInfo.InvariantCulture, out double precipitableWater);
 
-            double aerosolOpticalDepth = 0;
-            double.TryParse(values[29], NumberStyles.Any, CultureInfo.InvariantCulture, out aerosolOpticalDepth);
+            double.TryParse(values[29], NumberStyles.Any, CultureInfo.InvariantCulture, out double aerosolOpticalDepth);
 
-            double snowDepth = 0;
-            double.TryParse(values[30], NumberStyles.Any, CultureInfo.InvariantCulture, out snowDepth);
+            double.TryParse(values[30], NumberStyles.Any, CultureInfo.InvariantCulture, out double snowDepth);
 
-            int daysSinceLastSnowfall = 0;
-            int.TryParse(values[31], NumberStyles.Any, CultureInfo.InvariantCulture, out daysSinceLastSnowfall);
+            int.TryParse(values[31], NumberStyles.Any, CultureInfo.InvariantCulture, out int daysSinceLastSnowfall);
 
-            double albedo = 0;
-            double.TryParse(values[32], NumberStyles.Any, CultureInfo.InvariantCulture, out albedo);
+            double.TryParse(values[32], NumberStyles.Any, CultureInfo.InvariantCulture, out double albedo);
 
-            double liquidPrecipitationDepth = 0;
-            double.TryParse(values[33], NumberStyles.Any, CultureInfo.InvariantCulture, out liquidPrecipitationDepth);
+            double.TryParse(values[33], NumberStyles.Any, CultureInfo.InvariantCulture, out double liquidPrecipitationDepth);
 
-            double liquidPrecipitationQuantity = 0;
-            double.TryParse(values[34], NumberStyles.Any, CultureInfo.InvariantCulture, out liquidPrecipitationQuantity);
+            double.TryParse(values[34], NumberStyles.Any, CultureInfo.InvariantCulture, out double liquidPrecipitationQuantity);
 
             index_Next = index + 1;
 

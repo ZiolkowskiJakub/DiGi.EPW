@@ -24,10 +24,10 @@ namespace DiGi.EPW
             }
 
             Location? location = null;
-            Classes.DesignConditions? designConditions = null;
+            DesignConditions? designConditions = null;
             List<TypicalExtremePeriod>? typicalExtremePeriods = null;
             List<GroundTemperature>? groundTemperatures = null;
-            Classes.HolidaysDaylightSaving? holidaysDaylightSaving = null;
+            HolidaysDaylightSaving? holidaysDaylightSaving = null;
             string? comments1 = null;
             string? comments2 = null;
             List<DataPeriod>? dataPeriods = null;
