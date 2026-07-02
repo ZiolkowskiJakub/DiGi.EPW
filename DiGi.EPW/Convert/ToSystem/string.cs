@@ -4,7 +4,10 @@ using System.Globalization;
 
 namespace DiGi.EPW
 {
-    public static partial class Query
+    /// <summary>
+    /// Extension and helper methods for converting EPW data models to System string representations.
+    /// </summary>
+    public static partial class Convert
     {
         private static string ToInvariantString(double value)
         {
@@ -16,7 +19,7 @@ namespace DiGi.EPW
         /// </summary>
         /// <param name="location">The location to be converted.</param>
         /// <returns>The EPW LOCATION header record line.</returns>
-        public static string ToString(this Location location)
+        public static string ToSystem_String(this Location location)
         {
             return string.Join(",", Constants.HeaderName.Location, location.City, location.Region, location.Country, location.Source, location.WHO, ToInvariantString(location.Latitude), ToInvariantString(location.Longitude), ToInvariantString(location.TimeZone), ToInvariantString(location.Elevation));
         }
@@ -26,7 +29,7 @@ namespace DiGi.EPW
         /// </summary>
         /// <param name="designConditions">The design conditions to be converted.</param>
         /// <returns>The EPW DESIGN CONDITIONS header record line.</returns>
-        public static string ToString(this DesignConditions designConditions)
+        public static string ToSystem_String(this DesignConditions designConditions)
         {
             List<string> values = [Constants.HeaderName.DesignConditions, designConditions.NumberOfDesignConditions.ToString(CultureInfo.InvariantCulture), designConditions.Source ?? string.Empty, designConditions.Name ?? string.Empty];
 
@@ -65,7 +68,7 @@ namespace DiGi.EPW
         /// </summary>
         /// <param name="typicalExtremePeriods">The typical/extreme periods to be converted.</param>
         /// <returns>The EPW TYPICAL/EXTREME PERIODS header record line.</returns>
-        public static string ToString(this IList<TypicalExtremePeriod> typicalExtremePeriods)
+        public static string ToSystem_String(this IList<TypicalExtremePeriod> typicalExtremePeriods)
         {
             List<string> values = [Constants.HeaderName.TypicalExtremePeriods, typicalExtremePeriods.Count.ToString(CultureInfo.InvariantCulture)];
 
@@ -85,7 +88,7 @@ namespace DiGi.EPW
         /// </summary>
         /// <param name="groundTemperatures">The ground temperatures to be converted.</param>
         /// <returns>The EPW GROUND TEMPERATURES header record line.</returns>
-        public static string ToString(this IList<GroundTemperature> groundTemperatures)
+        public static string ToSystem_String(this IList<GroundTemperature> groundTemperatures)
         {
             List<string> values = [Constants.HeaderName.GroundTemperatures, groundTemperatures.Count.ToString(CultureInfo.InvariantCulture)];
 
@@ -113,7 +116,7 @@ namespace DiGi.EPW
         /// </summary>
         /// <param name="holidaysDaylightSaving">The holidays/daylight saving record to be converted.</param>
         /// <returns>The EPW HOLIDAYS/DAYLIGHT SAVINGS header record line.</returns>
-        public static string ToString(this HolidaysDaylightSaving holidaysDaylightSaving)
+        public static string ToSystem_String(this HolidaysDaylightSaving holidaysDaylightSaving)
         {
             IList<Holiday>? holidays = holidaysDaylightSaving.Holidays;
 
@@ -137,7 +140,7 @@ namespace DiGi.EPW
         /// <param name="dataPeriods">The data periods to be converted.</param>
         /// <param name="recordsPerHour">The number of records per hour to be written into the record.</param>
         /// <returns>The EPW DATA PERIODS header record line.</returns>
-        public static string ToString(this IList<DataPeriod> dataPeriods, int recordsPerHour)
+        public static string ToSystem_String(this IList<DataPeriod> dataPeriods, int recordsPerHour)
         {
             List<string> values = [Constants.HeaderName.DataPeriods, dataPeriods.Count.ToString(CultureInfo.InvariantCulture), recordsPerHour.ToString(CultureInfo.InvariantCulture)];
 
@@ -157,15 +160,17 @@ namespace DiGi.EPW
         /// </summary>
         /// <param name="dataRecord">The data record to be converted.</param>
         /// <returns>The EPW hourly weather data line.</returns>
-        public static string ToString(this DataRecord dataRecord)
+        public static string ToSystem_String(this DataRecord dataRecord)
         {
+            dataRecord.DateTime.ToEPW_DateTime(out int year, out int month, out int day, out int hour, out int minute);
+
             List<string> values =
             [
-                dataRecord.Year.ToString(CultureInfo.InvariantCulture),
-                dataRecord.Month.ToString(CultureInfo.InvariantCulture),
-                dataRecord.Day.ToString(CultureInfo.InvariantCulture),
-                dataRecord.Hour.ToString(CultureInfo.InvariantCulture),
-                dataRecord.Minute.ToString(CultureInfo.InvariantCulture),
+                year.ToString(CultureInfo.InvariantCulture),
+                month.ToString(CultureInfo.InvariantCulture),
+                day.ToString(CultureInfo.InvariantCulture),
+                hour.ToString(CultureInfo.InvariantCulture),
+                minute.ToString(CultureInfo.InvariantCulture),
                 dataRecord.DataSourceAndUncertaintyFlags ?? string.Empty,
                 ToInvariantString(dataRecord.DryBulbTemperature),
                 ToInvariantString(dataRecord.DewPointTemperature),

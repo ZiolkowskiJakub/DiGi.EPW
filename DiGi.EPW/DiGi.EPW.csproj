@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
@@ -28,6 +28,9 @@
 	<ItemGroup>
 		<Reference Include="DiGi.Core">
 			<HintPath>..\..\DiGi.Core\bin\DiGi.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DiGi.Weather">
+			<HintPath>..\..\DiGi.Weather\bin\DiGi.Weather.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

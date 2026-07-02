@@ -147,10 +147,10 @@ public string? StartDayOfWeek { get; }
 Represents a single hourly weather data record of an EPW file\.
 
 ```csharp
-public class DataRecord : DiGi.Core.Classes.SerializableObject, DiGi.EPW.Interfaces.IEPWSerializableObject, DiGi.EPW.Interfaces.IEPWObject, DiGi.Core.Interfaces.IObject, DiGi.Core.Interfaces.ISerializableObject, DiGi.Core.Interfaces.ICloneableObject<DiGi.Core.Interfaces.ISerializableObject>, DiGi.Core.Interfaces.ICloneableObject
+public class DataRecord : DiGi.Weather.Classes.WeatherRecord, DiGi.EPW.Interfaces.IEPWSerializableObject, DiGi.EPW.Interfaces.IEPWObject, DiGi.Core.Interfaces.IObject, DiGi.Core.Interfaces.ISerializableObject, DiGi.Core.Interfaces.ICloneableObject<DiGi.Core.Interfaces.ISerializableObject>, DiGi.Core.Interfaces.ICloneableObject
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → [DiGi\.Core\.Classes\.Object](https://learn.microsoft.com/en-us/dotnet/api/digi.core.classes.object 'DiGi\.Core\.Classes\.Object') → [DiGi\.Core\.Classes\.SerializableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.classes.serializableobject 'DiGi\.Core\.Classes\.SerializableObject') → DataRecord
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → [DiGi\.Core\.Classes\.Object](https://learn.microsoft.com/en-us/dotnet/api/digi.core.classes.object 'DiGi\.Core\.Classes\.Object') → [DiGi\.Core\.Classes\.SerializableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.classes.serializableobject 'DiGi\.Core\.Classes\.SerializableObject') → [DiGi\.Weather\.Classes\.WeatherRecord](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weatherrecord 'DiGi\.Weather\.Classes\.WeatherRecord') → DataRecord
 
 Implements [IEPWSerializableObject](DiGi.EPW.Interfaces.md#DiGi.EPW.Interfaces.IEPWSerializableObject 'DiGi\.EPW\.Interfaces\.IEPWSerializableObject'), [IEPWObject](DiGi.EPW.Interfaces.md#DiGi.EPW.Interfaces.IEPWObject 'DiGi\.EPW\.Interfaces\.IEPWObject'), [DiGi\.Core\.Interfaces\.IObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iobject 'DiGi\.Core\.Interfaces\.IObject'), [DiGi\.Core\.Interfaces\.ISerializableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iserializableobject 'DiGi\.Core\.Interfaces\.ISerializableObject'), [DiGi\.Core\.Interfaces\.ICloneableObject&lt;](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.icloneableobject-1 'DiGi\.Core\.Interfaces\.ICloneableObject\`1')[DiGi\.Core\.Interfaces\.ISerializableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iserializableobject 'DiGi\.Core\.Interfaces\.ISerializableObject')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.icloneableobject-1 'DiGi\.Core\.Interfaces\.ICloneableObject\`1'), [DiGi\.Core\.Interfaces\.ICloneableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.icloneableobject 'DiGi\.Core\.Interfaces\.ICloneableObject')
 ### Constructors
@@ -172,224 +172,200 @@ public DataRecord(DiGi.EPW.Classes.DataRecord? dataRecord);
 
 The source data record to copy from\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double)'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float)'></a>
 
-## DataRecord\(int, int, int, int, int, string, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, int, int, double, double, int, string, double, double, double, int, double, double, double\) Constructor
+## DataRecord\(DateTime, string, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, int, int, float, float, int, string, float, float, float, int, float, float, float\) Constructor
 
 Initializes a new instance of the [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord') class\.
 
 ```csharp
-public DataRecord(int year, int month, int day, int hour, int minute, string? dataSourceAndUncertaintyFlags, double dryBulbTemperature, double dewPointTemperature, double relativeHumidity, double atmosphericStationPressure, double extraterrestrialHorizontalRadiation, double extraterrestrialDirectNormalRadiation, double horizontalInfraredRadiationIntensity, double globalHorizontalRadiation, double directNormalRadiation, double diffuseHorizontalRadiation, double globalHorizontalIlluminance, double directNormalIlluminance, double diffuseHorizontalIlluminance, double zenithLuminance, double windDirection, double windSpeed, int totalSkyCover, int opaqueSkyCover, double visibility, double ceilingHeight, int presentWeatherObservation, string? presentWeatherCodes, double precipitableWater, double aerosolOpticalDepth, double snowDepth, int daysSinceLastSnowfall, double albedo, double liquidPrecipitationDepth, double liquidPrecipitationQuantity);
+public DataRecord(System.DateTime dateTime, string? dataSourceAndUncertaintyFlags, float dryBulbTemperature, float dewPointTemperature, float relativeHumidity, float atmosphericStationPressure, float extraterrestrialHorizontalRadiation, float extraterrestrialDirectNormalRadiation, float horizontalInfraredRadiationIntensity, float globalHorizontalRadiation, float directNormalRadiation, float diffuseHorizontalRadiation, float globalHorizontalIlluminance, float directNormalIlluminance, float diffuseHorizontalIlluminance, float zenithLuminance, float windDirection, float windSpeed, int totalSkyCover, int opaqueSkyCover, float visibility, float ceilingHeight, int presentWeatherObservation, string? presentWeatherCodes, float precipitableWater, float aerosolOpticalDepth, float snowDepth, int daysSinceLastSnowfall, float albedo, float liquidPrecipitationDepth, float liquidPrecipitationQuantity);
 ```
 #### Parameters
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).year'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).dateTime'></a>
 
-`year` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+`dateTime` [System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime')
 
-The year of the record\.
+The date and time of the record\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).month'></a>
-
-`month` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
-The month of the record\.
-
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).day'></a>
-
-`day` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
-The day of the record\.
-
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).hour'></a>
-
-`hour` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
-The hour of the record\.
-
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).minute'></a>
-
-`minute` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
-The minute of the record\.
-
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).dataSourceAndUncertaintyFlags'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).dataSourceAndUncertaintyFlags'></a>
 
 `dataSourceAndUncertaintyFlags` [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')
 
 The data source and uncertainty flags string\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).dryBulbTemperature'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).dryBulbTemperature'></a>
 
-`dryBulbTemperature` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`dryBulbTemperature` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The dry bulb temperature, in degrees Celsius\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).dewPointTemperature'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).dewPointTemperature'></a>
 
-`dewPointTemperature` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`dewPointTemperature` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The dew point temperature, in degrees Celsius\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).relativeHumidity'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).relativeHumidity'></a>
 
-`relativeHumidity` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`relativeHumidity` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The relative humidity, in percent\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).atmosphericStationPressure'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).atmosphericStationPressure'></a>
 
-`atmosphericStationPressure` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`atmosphericStationPressure` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The atmospheric station pressure, in Pascals\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).extraterrestrialHorizontalRadiation'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).extraterrestrialHorizontalRadiation'></a>
 
-`extraterrestrialHorizontalRadiation` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`extraterrestrialHorizontalRadiation` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The extraterrestrial horizontal radiation, in Wh/m2\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).extraterrestrialDirectNormalRadiation'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).extraterrestrialDirectNormalRadiation'></a>
 
-`extraterrestrialDirectNormalRadiation` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`extraterrestrialDirectNormalRadiation` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The extraterrestrial direct normal radiation, in Wh/m2\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).horizontalInfraredRadiationIntensity'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).horizontalInfraredRadiationIntensity'></a>
 
-`horizontalInfraredRadiationIntensity` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`horizontalInfraredRadiationIntensity` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The horizontal infrared radiation intensity, in Wh/m2\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).globalHorizontalRadiation'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).globalHorizontalRadiation'></a>
 
-`globalHorizontalRadiation` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`globalHorizontalRadiation` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The global horizontal radiation, in Wh/m2\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).directNormalRadiation'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).directNormalRadiation'></a>
 
-`directNormalRadiation` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`directNormalRadiation` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The direct normal radiation, in Wh/m2\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).diffuseHorizontalRadiation'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).diffuseHorizontalRadiation'></a>
 
-`diffuseHorizontalRadiation` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`diffuseHorizontalRadiation` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The diffuse horizontal radiation, in Wh/m2\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).globalHorizontalIlluminance'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).globalHorizontalIlluminance'></a>
 
-`globalHorizontalIlluminance` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`globalHorizontalIlluminance` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The global horizontal illuminance, in lux\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).directNormalIlluminance'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).directNormalIlluminance'></a>
 
-`directNormalIlluminance` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`directNormalIlluminance` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The direct normal illuminance, in lux\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).diffuseHorizontalIlluminance'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).diffuseHorizontalIlluminance'></a>
 
-`diffuseHorizontalIlluminance` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`diffuseHorizontalIlluminance` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The diffuse horizontal illuminance, in lux\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).zenithLuminance'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).zenithLuminance'></a>
 
-`zenithLuminance` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`zenithLuminance` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The zenith luminance, in Cd/m2\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).windDirection'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).windDirection'></a>
 
-`windDirection` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`windDirection` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The wind direction, in degrees\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).windSpeed'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).windSpeed'></a>
 
-`windSpeed` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`windSpeed` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The wind speed, in m/s\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).totalSkyCover'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).totalSkyCover'></a>
 
 `totalSkyCover` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
 
 The total sky cover, in tenths\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).opaqueSkyCover'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).opaqueSkyCover'></a>
 
 `opaqueSkyCover` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
 
 The opaque sky cover, in tenths\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).visibility'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).visibility'></a>
 
-`visibility` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`visibility` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The visibility, in km\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).ceilingHeight'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).ceilingHeight'></a>
 
-`ceilingHeight` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`ceilingHeight` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The ceiling height, in m\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).presentWeatherObservation'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).presentWeatherObservation'></a>
 
 `presentWeatherObservation` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
 
 The present weather observation flag\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).presentWeatherCodes'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).presentWeatherCodes'></a>
 
 `presentWeatherCodes` [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')
 
 The present weather codes\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).precipitableWater'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).precipitableWater'></a>
 
-`precipitableWater` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`precipitableWater` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The precipitable water, in mm\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).aerosolOpticalDepth'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).aerosolOpticalDepth'></a>
 
-`aerosolOpticalDepth` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`aerosolOpticalDepth` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The aerosol optical depth, in thousandths\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).snowDepth'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).snowDepth'></a>
 
-`snowDepth` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`snowDepth` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The snow depth, in cm\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).daysSinceLastSnowfall'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).daysSinceLastSnowfall'></a>
 
 `daysSinceLastSnowfall` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
 
 The number of days since the last snowfall\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).albedo'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).albedo'></a>
 
-`albedo` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`albedo` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The albedo\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).liquidPrecipitationDepth'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).liquidPrecipitationDepth'></a>
 
-`liquidPrecipitationDepth` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`liquidPrecipitationDepth` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The liquid precipitation depth, in mm\.
 
-<a name='DiGi.EPW.Classes.DataRecord.DataRecord(int,int,int,int,int,string,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,int,int,double,double,int,string,double,double,double,int,double,double,double).liquidPrecipitationQuantity'></a>
+<a name='DiGi.EPW.Classes.DataRecord.DataRecord(System.DateTime,string,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,int,int,float,float,int,string,float,float,float,int,float,float,float).liquidPrecipitationQuantity'></a>
 
-`liquidPrecipitationQuantity` [System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+`liquidPrecipitationQuantity` [System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 The liquid precipitation quantity, in hours\.
 
@@ -418,11 +394,11 @@ The JSON object containing hourly weather data\.
 Gets the aerosol optical depth, in thousandths\.
 
 ```csharp
-public double AerosolOpticalDepth { get; }
+public float AerosolOpticalDepth { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DataRecord.Albedo'></a>
 
@@ -431,37 +407,11 @@ public double AerosolOpticalDepth { get; }
 Gets the albedo\.
 
 ```csharp
-public double Albedo { get; }
+public float Albedo { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.AtmosphericStationPressure'></a>
-
-## DataRecord\.AtmosphericStationPressure Property
-
-Gets the atmospheric station pressure, in Pascals\.
-
-```csharp
-public double AtmosphericStationPressure { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.CeilingHeight'></a>
-
-## DataRecord\.CeilingHeight Property
-
-Gets the ceiling height, in m\.
-
-```csharp
-public double CeilingHeight { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DataRecord.DataSourceAndUncertaintyFlags'></a>
 
@@ -476,19 +426,6 @@ public string? DataSourceAndUncertaintyFlags { get; }
 #### Property Value
 [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')
 
-<a name='DiGi.EPW.Classes.DataRecord.Day'></a>
-
-## DataRecord\.Day Property
-
-Gets the day of the record\.
-
-```csharp
-public int Day { get; }
-```
-
-#### Property Value
-[System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
 <a name='DiGi.EPW.Classes.DataRecord.DaysSinceLastSnowfall'></a>
 
 ## DataRecord\.DaysSinceLastSnowfall Property
@@ -502,84 +439,6 @@ public int DaysSinceLastSnowfall { get; }
 #### Property Value
 [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
 
-<a name='DiGi.EPW.Classes.DataRecord.DewPointTemperature'></a>
-
-## DataRecord\.DewPointTemperature Property
-
-Gets the dew point temperature, in degrees Celsius\.
-
-```csharp
-public double DewPointTemperature { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.DiffuseHorizontalIlluminance'></a>
-
-## DataRecord\.DiffuseHorizontalIlluminance Property
-
-Gets the diffuse horizontal illuminance, in lux\.
-
-```csharp
-public double DiffuseHorizontalIlluminance { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.DiffuseHorizontalRadiation'></a>
-
-## DataRecord\.DiffuseHorizontalRadiation Property
-
-Gets the diffuse horizontal radiation, in Wh/m2\.
-
-```csharp
-public double DiffuseHorizontalRadiation { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.DirectNormalIlluminance'></a>
-
-## DataRecord\.DirectNormalIlluminance Property
-
-Gets the direct normal illuminance, in lux\.
-
-```csharp
-public double DirectNormalIlluminance { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.DirectNormalRadiation'></a>
-
-## DataRecord\.DirectNormalRadiation Property
-
-Gets the direct normal radiation, in Wh/m2\.
-
-```csharp
-public double DirectNormalRadiation { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.DryBulbTemperature'></a>
-
-## DataRecord\.DryBulbTemperature Property
-
-Gets the dry bulb temperature, in degrees Celsius\.
-
-```csharp
-public double DryBulbTemperature { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
 <a name='DiGi.EPW.Classes.DataRecord.ExtraterrestrialDirectNormalRadiation'></a>
 
 ## DataRecord\.ExtraterrestrialDirectNormalRadiation Property
@@ -587,11 +446,11 @@ public double DryBulbTemperature { get; }
 Gets the extraterrestrial direct normal radiation, in Wh/m2\.
 
 ```csharp
-public double ExtraterrestrialDirectNormalRadiation { get; }
+public float ExtraterrestrialDirectNormalRadiation { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DataRecord.ExtraterrestrialHorizontalRadiation'></a>
 
@@ -600,63 +459,11 @@ public double ExtraterrestrialDirectNormalRadiation { get; }
 Gets the extraterrestrial horizontal radiation, in Wh/m2\.
 
 ```csharp
-public double ExtraterrestrialHorizontalRadiation { get; }
+public float ExtraterrestrialHorizontalRadiation { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.GlobalHorizontalIlluminance'></a>
-
-## DataRecord\.GlobalHorizontalIlluminance Property
-
-Gets the global horizontal illuminance, in lux\.
-
-```csharp
-public double GlobalHorizontalIlluminance { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.GlobalHorizontalRadiation'></a>
-
-## DataRecord\.GlobalHorizontalRadiation Property
-
-Gets the global horizontal radiation, in Wh/m2\.
-
-```csharp
-public double GlobalHorizontalRadiation { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.HorizontalInfraredRadiationIntensity'></a>
-
-## DataRecord\.HorizontalInfraredRadiationIntensity Property
-
-Gets the horizontal infrared radiation intensity, in Wh/m2\.
-
-```csharp
-public double HorizontalInfraredRadiationIntensity { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.Hour'></a>
-
-## DataRecord\.Hour Property
-
-Gets the hour of the record\.
-
-```csharp
-public int Hour { get; }
-```
-
-#### Property Value
-[System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DataRecord.LiquidPrecipitationDepth'></a>
 
@@ -665,11 +472,11 @@ public int Hour { get; }
 Gets the liquid precipitation depth, in mm\.
 
 ```csharp
-public double LiquidPrecipitationDepth { get; }
+public float LiquidPrecipitationDepth { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DataRecord.LiquidPrecipitationQuantity'></a>
 
@@ -678,50 +485,11 @@ public double LiquidPrecipitationDepth { get; }
 Gets the liquid precipitation quantity, in hours\.
 
 ```csharp
-public double LiquidPrecipitationQuantity { get; }
+public float LiquidPrecipitationQuantity { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.Minute'></a>
-
-## DataRecord\.Minute Property
-
-Gets the minute of the record\.
-
-```csharp
-public int Minute { get; }
-```
-
-#### Property Value
-[System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
-<a name='DiGi.EPW.Classes.DataRecord.Month'></a>
-
-## DataRecord\.Month Property
-
-Gets the month of the record\.
-
-```csharp
-public int Month { get; }
-```
-
-#### Property Value
-[System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
-<a name='DiGi.EPW.Classes.DataRecord.OpaqueSkyCover'></a>
-
-## DataRecord\.OpaqueSkyCover Property
-
-Gets the opaque sky cover, in tenths\.
-
-```csharp
-public int OpaqueSkyCover { get; }
-```
-
-#### Property Value
-[System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DataRecord.PrecipitableWater'></a>
 
@@ -730,11 +498,11 @@ public int OpaqueSkyCover { get; }
 Gets the precipitable water, in mm\.
 
 ```csharp
-public double PrecipitableWater { get; }
+public float PrecipitableWater { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DataRecord.PresentWeatherCodes'></a>
 
@@ -762,45 +530,6 @@ public int PresentWeatherObservation { get; }
 #### Property Value
 [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
 
-<a name='DiGi.EPW.Classes.DataRecord.RelativeHumidity'></a>
-
-## DataRecord\.RelativeHumidity Property
-
-Gets the relative humidity, in percent\.
-
-```csharp
-public double RelativeHumidity { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.SnowDepth'></a>
-
-## DataRecord\.SnowDepth Property
-
-Gets the snow depth, in cm\.
-
-```csharp
-public double SnowDepth { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.TotalSkyCover'></a>
-
-## DataRecord\.TotalSkyCover Property
-
-Gets the total sky cover, in tenths\.
-
-```csharp
-public int TotalSkyCover { get; }
-```
-
-#### Property Value
-[System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
 <a name='DiGi.EPW.Classes.DataRecord.Visibility'></a>
 
 ## DataRecord\.Visibility Property
@@ -808,50 +537,11 @@ public int TotalSkyCover { get; }
 Gets the visibility, in km\.
 
 ```csharp
-public double Visibility { get; }
+public float Visibility { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.WindDirection'></a>
-
-## DataRecord\.WindDirection Property
-
-Gets the wind direction, in degrees\.
-
-```csharp
-public double WindDirection { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.WindSpeed'></a>
-
-## DataRecord\.WindSpeed Property
-
-Gets the wind speed, in m/s\.
-
-```csharp
-public double WindSpeed { get; }
-```
-
-#### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
-
-<a name='DiGi.EPW.Classes.DataRecord.Year'></a>
-
-## DataRecord\.Year Property
-
-Gets the year of the record\.
-
-```csharp
-public int Year { get; }
-```
-
-#### Property Value
-[System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DataRecord.ZenithLuminance'></a>
 
@@ -860,11 +550,11 @@ public int Year { get; }
 Gets the zenith luminance, in Cd/m2\.
 
 ```csharp
-public double ZenithLuminance { get; }
+public float ZenithLuminance { get; }
 ```
 
 #### Property Value
-[System\.Double](https://learn.microsoft.com/en-us/dotnet/api/system.double 'System\.Double')
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
 
 <a name='DiGi.EPW.Classes.DesignConditions'></a>
 
@@ -1048,10 +738,10 @@ public string? Source { get; }
 Represents an EnergyPlus Weather \(EPW\) file and its associated data\.
 
 ```csharp
-public class EPWFile : DiGi.Core.Classes.SerializableObject, DiGi.EPW.Interfaces.IEPWSerializableObject, DiGi.EPW.Interfaces.IEPWObject, DiGi.Core.Interfaces.IObject, DiGi.Core.Interfaces.ISerializableObject, DiGi.Core.Interfaces.ICloneableObject<DiGi.Core.Interfaces.ISerializableObject>, DiGi.Core.Interfaces.ICloneableObject
+public class EPWFile : DiGi.Weather.Classes.Weather, DiGi.EPW.Interfaces.IEPWSerializableObject, DiGi.EPW.Interfaces.IEPWObject, DiGi.Core.Interfaces.IObject, DiGi.Core.Interfaces.ISerializableObject, DiGi.Core.Interfaces.ICloneableObject<DiGi.Core.Interfaces.ISerializableObject>, DiGi.Core.Interfaces.ICloneableObject
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → [DiGi\.Core\.Classes\.Object](https://learn.microsoft.com/en-us/dotnet/api/digi.core.classes.object 'DiGi\.Core\.Classes\.Object') → [DiGi\.Core\.Classes\.SerializableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.classes.serializableobject 'DiGi\.Core\.Classes\.SerializableObject') → EPWFile
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → [DiGi\.Core\.Classes\.Object](https://learn.microsoft.com/en-us/dotnet/api/digi.core.classes.object 'DiGi\.Core\.Classes\.Object') → [DiGi\.Core\.Classes\.SerializableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.classes.serializableobject 'DiGi\.Core\.Classes\.SerializableObject') → [DiGi\.Weather\.Classes\.Weather&lt;](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weather-1 'DiGi\.Weather\.Classes\.Weather\`1')[DiGi\.Weather\.Classes\.WeatherRecord](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weatherrecord 'DiGi\.Weather\.Classes\.WeatherRecord')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weather-1 'DiGi\.Weather\.Classes\.Weather\`1') → [DiGi\.Weather\.Classes\.Weather](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weather 'DiGi\.Weather\.Classes\.Weather') → EPWFile
 
 Implements [IEPWSerializableObject](DiGi.EPW.Interfaces.md#DiGi.EPW.Interfaces.IEPWSerializableObject 'DiGi\.EPW\.Interfaces\.IEPWSerializableObject'), [IEPWObject](DiGi.EPW.Interfaces.md#DiGi.EPW.Interfaces.IEPWObject 'DiGi\.EPW\.Interfaces\.IEPWObject'), [DiGi\.Core\.Interfaces\.IObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iobject 'DiGi\.Core\.Interfaces\.IObject'), [DiGi\.Core\.Interfaces\.ISerializableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iserializableobject 'DiGi\.Core\.Interfaces\.ISerializableObject'), [DiGi\.Core\.Interfaces\.ICloneableObject&lt;](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.icloneableobject-1 'DiGi\.Core\.Interfaces\.ICloneableObject\`1')[DiGi\.Core\.Interfaces\.ISerializableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.iserializableobject 'DiGi\.Core\.Interfaces\.ISerializableObject')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.icloneableobject-1 'DiGi\.Core\.Interfaces\.ICloneableObject\`1'), [DiGi\.Core\.Interfaces\.ICloneableObject](https://learn.microsoft.com/en-us/dotnet/api/digi.core.interfaces.icloneableobject 'DiGi\.Core\.Interfaces\.ICloneableObject')
 ### Constructors

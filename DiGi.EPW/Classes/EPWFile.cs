@@ -1,6 +1,7 @@
-using DiGi.Core.Classes;
+using DiGi.Weather.Classes;
 using DiGi.EPW.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
@@ -9,7 +10,7 @@ namespace DiGi.EPW.Classes
     /// <summary>
     /// Represents an EnergyPlus Weather (EPW) file and its associated data.
     /// </summary>
-    public class EPWFile : SerializableObject, IEPWSerializableObject
+    public class EPWFile : DiGi.Weather.Classes.Weather, IEPWSerializableObject
     {
         [JsonInclude, JsonPropertyName(nameof(Location))]
         private readonly Location? location = null;
@@ -35,9 +36,6 @@ namespace DiGi.EPW.Classes
         [JsonInclude, JsonPropertyName(nameof(DataPeriods))]
         private readonly IList<DataPeriod>? dataPeriods = null;
 
-        [JsonInclude, JsonPropertyName(nameof(DataRecords))]
-        private readonly IList<DataRecord>? dataRecords = null;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="EPWFile"/> class.
         /// </summary>
@@ -51,6 +49,7 @@ namespace DiGi.EPW.Classes
         /// <param name="dataPeriods">The data periods header record.</param>
         /// <param name="dataRecords">The hourly weather data records.</param>
         public EPWFile(Location? location, DesignConditions? designConditions = null, IList<TypicalExtremePeriod>? typicalExtremePeriods = null, IList<GroundTemperature>? groundTemperatures = null, HolidaysDaylightSaving? holidaysDaylightSaving = null, string? comments1 = null, string? comments2 = null, IList<DataPeriod>? dataPeriods = null, IList<DataRecord>? dataRecords = null)
+            : base(dataRecords?.Cast<WeatherRecord>() ?? [])
         {
             this.location = location;
             this.designConditions = designConditions;
@@ -60,7 +59,6 @@ namespace DiGi.EPW.Classes
             this.comments1 = comments1;
             this.comments2 = comments2;
             this.dataPeriods = dataPeriods;
-            this.dataRecords = dataRecords;
         }
 
         /// <summary>
@@ -68,7 +66,7 @@ namespace DiGi.EPW.Classes
         /// </summary>
         /// <param name="ePWFile">The source EPW file to copy from.</param>
         public EPWFile(EPWFile? ePWFile)
-            : base(ePWFile)
+            : base(ePWFile!)
         {
             if (ePWFile != null)
             {
@@ -113,18 +111,6 @@ namespace DiGi.EPW.Classes
                         }
                     }
                 }
-
-                if (ePWFile.dataRecords != null)
-                {
-                    dataRecords = [];
-                    foreach (DataRecord dataRecord in ePWFile.dataRecords)
-                    {
-                        if (Core.Query.Clone(dataRecord) is DataRecord dataRecord_Temp)
-                        {
-                            dataRecords.Add(dataRecord_Temp);
-                        }
-                    }
-                }
             }
         }
 
@@ -133,7 +119,7 @@ namespace DiGi.EPW.Classes
         /// </summary>
         /// <param name="jsonObject">The JSON object containing EPW file data.</param>
         public EPWFile(JsonObject? jsonObject)
-            : base(jsonObject)
+            : base(jsonObject!)
         {
         }
 
@@ -241,7 +227,7 @@ namespace DiGi.EPW.Classes
         {
             get
             {
-                return dataRecords;
+                return WeatherRecords?.Cast<DataRecord>().ToList();
             }
         }
     }

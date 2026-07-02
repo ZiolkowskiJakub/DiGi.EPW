@@ -3,9 +3,270 @@
 ## DiGi\.EPW Namespace
 ### Classes
 
+<a name='DiGi.EPW.Convert'></a>
+
+## Convert Class
+
+Extension and helper methods for converting data types to EPW representations\.
+
+```csharp
+public static class Convert
+```
+
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → Convert
+### Methods
+
+<a name='DiGi.EPW.Convert.ToEPW_DateTime(thisSystem.DateTime,int,int,int,int,int)'></a>
+
+## Convert\.ToEPW\_DateTime\(this DateTime, int, int, int, int, int\) Method
+
+Decomposes a standard [System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime') instance back into EPW\-compliant datetime components\.
+
+```csharp
+public static void ToEPW_DateTime(this System.DateTime dateTime, out int year, out int month, out int day, out int hour, out int minute);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToEPW_DateTime(thisSystem.DateTime,int,int,int,int,int).dateTime'></a>
+
+`dateTime` [System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime')
+
+The [System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime') to decompose\.
+
+<a name='DiGi.EPW.Convert.ToEPW_DateTime(thisSystem.DateTime,int,int,int,int,int).year'></a>
+
+`year` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The output year\.
+
+<a name='DiGi.EPW.Convert.ToEPW_DateTime(thisSystem.DateTime,int,int,int,int,int).month'></a>
+
+`month` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The output month\.
+
+<a name='DiGi.EPW.Convert.ToEPW_DateTime(thisSystem.DateTime,int,int,int,int,int).day'></a>
+
+`day` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The output day\.
+
+<a name='DiGi.EPW.Convert.ToEPW_DateTime(thisSystem.DateTime,int,int,int,int,int).hour'></a>
+
+`hour` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The output hour \(1\-24\)\.
+
+<a name='DiGi.EPW.Convert.ToEPW_DateTime(thisSystem.DateTime,int,int,int,int,int).minute'></a>
+
+`minute` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The output minute \(0\-60\)\.
+
+<a name='DiGi.EPW.Convert.ToSystem_DateTime(int,int,int,int,int)'></a>
+
+## Convert\.ToSystem\_DateTime\(int, int, int, int, int\) Method
+
+Converts EPW datetime components to a standard [System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime') instance 
+using [System\.DateTimeKind\.Unspecified](https://learn.microsoft.com/en-us/dotnet/api/system.datetimekind.unspecified 'System\.DateTimeKind\.Unspecified') to avoid timezone and DST issues\.
+
+```csharp
+public static System.DateTime ToSystem_DateTime(int year, int month, int day, int hour, int minute);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToSystem_DateTime(int,int,int,int,int).year'></a>
+
+`year` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The year of the record\.
+
+<a name='DiGi.EPW.Convert.ToSystem_DateTime(int,int,int,int,int).month'></a>
+
+`month` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The month of the record\.
+
+<a name='DiGi.EPW.Convert.ToSystem_DateTime(int,int,int,int,int).day'></a>
+
+`day` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The day of the record\.
+
+<a name='DiGi.EPW.Convert.ToSystem_DateTime(int,int,int,int,int).hour'></a>
+
+`hour` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The hour of the record \(1\-24\)\.
+
+<a name='DiGi.EPW.Convert.ToSystem_DateTime(int,int,int,int,int).minute'></a>
+
+`minute` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The minute of the record \(0\-60\)\.
+
+#### Returns
+[System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime')  
+A standard [System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime') instance representing the exact instant\.
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisDiGi.EPW.Classes.DataRecord)'></a>
+
+## Convert\.ToSystem\_String\(this DataRecord\) Method
+
+Converts a [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord') instance into its EPW hourly weather data line representation\.
+
+```csharp
+public static string ToSystem_String(this DiGi.EPW.Classes.DataRecord dataRecord);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisDiGi.EPW.Classes.DataRecord).dataRecord'></a>
+
+`dataRecord` [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord')
+
+The data record to be converted\.
+
+#### Returns
+[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
+The EPW hourly weather data line\.
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisDiGi.EPW.Classes.DesignConditions)'></a>
+
+## Convert\.ToSystem\_String\(this DesignConditions\) Method
+
+Converts a [DesignConditions](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DesignConditions 'DiGi\.EPW\.Classes\.DesignConditions') instance into its EPW DESIGN CONDITIONS header record line representation\.
+
+```csharp
+public static string ToSystem_String(this DiGi.EPW.Classes.DesignConditions designConditions);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisDiGi.EPW.Classes.DesignConditions).designConditions'></a>
+
+`designConditions` [DesignConditions](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DesignConditions 'DiGi\.EPW\.Classes\.DesignConditions')
+
+The design conditions to be converted\.
+
+#### Returns
+[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
+The EPW DESIGN CONDITIONS header record line\.
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisDiGi.EPW.Classes.HolidaysDaylightSaving)'></a>
+
+## Convert\.ToSystem\_String\(this HolidaysDaylightSaving\) Method
+
+Converts a [HolidaysDaylightSaving](DiGi.EPW.Classes.md#DiGi.EPW.Classes.HolidaysDaylightSaving 'DiGi\.EPW\.Classes\.HolidaysDaylightSaving') instance into its EPW HOLIDAYS/DAYLIGHT SAVINGS header record line representation\.
+
+```csharp
+public static string ToSystem_String(this DiGi.EPW.Classes.HolidaysDaylightSaving holidaysDaylightSaving);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisDiGi.EPW.Classes.HolidaysDaylightSaving).holidaysDaylightSaving'></a>
+
+`holidaysDaylightSaving` [HolidaysDaylightSaving](DiGi.EPW.Classes.md#DiGi.EPW.Classes.HolidaysDaylightSaving 'DiGi\.EPW\.Classes\.HolidaysDaylightSaving')
+
+The holidays/daylight saving record to be converted\.
+
+#### Returns
+[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
+The EPW HOLIDAYS/DAYLIGHT SAVINGS header record line\.
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisDiGi.EPW.Classes.Location)'></a>
+
+## Convert\.ToSystem\_String\(this Location\) Method
+
+Converts a [Location](DiGi.EPW.Classes.md#DiGi.EPW.Classes.Location 'DiGi\.EPW\.Classes\.Location') instance into its EPW LOCATION header record line representation\.
+
+```csharp
+public static string ToSystem_String(this DiGi.EPW.Classes.Location location);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisDiGi.EPW.Classes.Location).location'></a>
+
+`location` [Location](DiGi.EPW.Classes.md#DiGi.EPW.Classes.Location 'DiGi\.EPW\.Classes\.Location')
+
+The location to be converted\.
+
+#### Returns
+[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
+The EPW LOCATION header record line\.
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.DataPeriod_,int)'></a>
+
+## Convert\.ToSystem\_String\(this IList\<DataPeriod\>, int\) Method
+
+Converts a list of [DataPeriod](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataPeriod 'DiGi\.EPW\.Classes\.DataPeriod') instances into their EPW DATA PERIODS header record line representation\.
+
+```csharp
+public static string ToSystem_String(this System.Collections.Generic.IList<DiGi.EPW.Classes.DataPeriod> dataPeriods, int recordsPerHour);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.DataPeriod_,int).dataPeriods'></a>
+
+`dataPeriods` [System\.Collections\.Generic\.IList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')[DataPeriod](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataPeriod 'DiGi\.EPW\.Classes\.DataPeriod')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')
+
+The data periods to be converted\.
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.DataPeriod_,int).recordsPerHour'></a>
+
+`recordsPerHour` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
+
+The number of records per hour to be written into the record\.
+
+#### Returns
+[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
+The EPW DATA PERIODS header record line\.
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.GroundTemperature_)'></a>
+
+## Convert\.ToSystem\_String\(this IList\<GroundTemperature\>\) Method
+
+Converts a list of [GroundTemperature](DiGi.EPW.Classes.md#DiGi.EPW.Classes.GroundTemperature 'DiGi\.EPW\.Classes\.GroundTemperature') instances into their EPW GROUND TEMPERATURES header record line representation\.
+
+```csharp
+public static string ToSystem_String(this System.Collections.Generic.IList<DiGi.EPW.Classes.GroundTemperature> groundTemperatures);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.GroundTemperature_).groundTemperatures'></a>
+
+`groundTemperatures` [System\.Collections\.Generic\.IList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')[GroundTemperature](DiGi.EPW.Classes.md#DiGi.EPW.Classes.GroundTemperature 'DiGi\.EPW\.Classes\.GroundTemperature')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')
+
+The ground temperatures to be converted\.
+
+#### Returns
+[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
+The EPW GROUND TEMPERATURES header record line\.
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.TypicalExtremePeriod_)'></a>
+
+## Convert\.ToSystem\_String\(this IList\<TypicalExtremePeriod\>\) Method
+
+Converts a list of [TypicalExtremePeriod](DiGi.EPW.Classes.md#DiGi.EPW.Classes.TypicalExtremePeriod 'DiGi\.EPW\.Classes\.TypicalExtremePeriod') instances into their EPW TYPICAL/EXTREME PERIODS header record line representation\.
+
+```csharp
+public static string ToSystem_String(this System.Collections.Generic.IList<DiGi.EPW.Classes.TypicalExtremePeriod> typicalExtremePeriods);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Convert.ToSystem_String(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.TypicalExtremePeriod_).typicalExtremePeriods'></a>
+
+`typicalExtremePeriods` [System\.Collections\.Generic\.IList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')[TypicalExtremePeriod](DiGi.EPW.Classes.md#DiGi.EPW.Classes.TypicalExtremePeriod 'DiGi\.EPW\.Classes\.TypicalExtremePeriod')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')
+
+The typical/extreme periods to be converted\.
+
+#### Returns
+[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
+The EPW TYPICAL/EXTREME PERIODS header record line\.
+
 <a name='DiGi.EPW.Create'></a>
 
 ## Create Class
+
+Provides factory methods for creating EPW\-related data models\.
 
 ```csharp
 public static class Create
@@ -378,156 +639,3 @@ Thrown when the provided EPW file is null\.
 
 [System\.ArgumentException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentexception 'System\.ArgumentException')  
 Thrown when the EPW file does not have a valid location\.
-
-<a name='DiGi.EPW.Query.ToString(thisDiGi.EPW.Classes.DataRecord)'></a>
-
-## Query\.ToString\(this DataRecord\) Method
-
-Converts a [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord') instance into its EPW hourly weather data line representation\.
-
-```csharp
-public static string ToString(this DiGi.EPW.Classes.DataRecord dataRecord);
-```
-#### Parameters
-
-<a name='DiGi.EPW.Query.ToString(thisDiGi.EPW.Classes.DataRecord).dataRecord'></a>
-
-`dataRecord` [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord')
-
-The data record to be converted\.
-
-#### Returns
-[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The EPW hourly weather data line\.
-
-<a name='DiGi.EPW.Query.ToString(thisDiGi.EPW.Classes.DesignConditions)'></a>
-
-## Query\.ToString\(this DesignConditions\) Method
-
-Converts a [DesignConditions](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DesignConditions 'DiGi\.EPW\.Classes\.DesignConditions') instance into its EPW DESIGN CONDITIONS header record line representation\.
-
-```csharp
-public static string ToString(this DiGi.EPW.Classes.DesignConditions designConditions);
-```
-#### Parameters
-
-<a name='DiGi.EPW.Query.ToString(thisDiGi.EPW.Classes.DesignConditions).designConditions'></a>
-
-`designConditions` [DesignConditions](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DesignConditions 'DiGi\.EPW\.Classes\.DesignConditions')
-
-The design conditions to be converted\.
-
-#### Returns
-[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The EPW DESIGN CONDITIONS header record line\.
-
-<a name='DiGi.EPW.Query.ToString(thisDiGi.EPW.Classes.HolidaysDaylightSaving)'></a>
-
-## Query\.ToString\(this HolidaysDaylightSaving\) Method
-
-Converts a [HolidaysDaylightSaving](DiGi.EPW.Classes.md#DiGi.EPW.Classes.HolidaysDaylightSaving 'DiGi\.EPW\.Classes\.HolidaysDaylightSaving') instance into its EPW HOLIDAYS/DAYLIGHT SAVINGS header record line representation\.
-
-```csharp
-public static string ToString(this DiGi.EPW.Classes.HolidaysDaylightSaving holidaysDaylightSaving);
-```
-#### Parameters
-
-<a name='DiGi.EPW.Query.ToString(thisDiGi.EPW.Classes.HolidaysDaylightSaving).holidaysDaylightSaving'></a>
-
-`holidaysDaylightSaving` [HolidaysDaylightSaving](DiGi.EPW.Classes.md#DiGi.EPW.Classes.HolidaysDaylightSaving 'DiGi\.EPW\.Classes\.HolidaysDaylightSaving')
-
-The holidays/daylight saving record to be converted\.
-
-#### Returns
-[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The EPW HOLIDAYS/DAYLIGHT SAVINGS header record line\.
-
-<a name='DiGi.EPW.Query.ToString(thisDiGi.EPW.Classes.Location)'></a>
-
-## Query\.ToString\(this Location\) Method
-
-Converts a [Location](DiGi.EPW.Classes.md#DiGi.EPW.Classes.Location 'DiGi\.EPW\.Classes\.Location') instance into its EPW LOCATION header record line representation\.
-
-```csharp
-public static string ToString(this DiGi.EPW.Classes.Location location);
-```
-#### Parameters
-
-<a name='DiGi.EPW.Query.ToString(thisDiGi.EPW.Classes.Location).location'></a>
-
-`location` [Location](DiGi.EPW.Classes.md#DiGi.EPW.Classes.Location 'DiGi\.EPW\.Classes\.Location')
-
-The location to be converted\.
-
-#### Returns
-[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The EPW LOCATION header record line\.
-
-<a name='DiGi.EPW.Query.ToString(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.DataPeriod_,int)'></a>
-
-## Query\.ToString\(this IList\<DataPeriod\>, int\) Method
-
-Converts a list of [DataPeriod](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataPeriod 'DiGi\.EPW\.Classes\.DataPeriod') instances into their EPW DATA PERIODS header record line representation\.
-
-```csharp
-public static string ToString(this System.Collections.Generic.IList<DiGi.EPW.Classes.DataPeriod> dataPeriods, int recordsPerHour);
-```
-#### Parameters
-
-<a name='DiGi.EPW.Query.ToString(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.DataPeriod_,int).dataPeriods'></a>
-
-`dataPeriods` [System\.Collections\.Generic\.IList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')[DataPeriod](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataPeriod 'DiGi\.EPW\.Classes\.DataPeriod')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')
-
-The data periods to be converted\.
-
-<a name='DiGi.EPW.Query.ToString(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.DataPeriod_,int).recordsPerHour'></a>
-
-`recordsPerHour` [System\.Int32](https://learn.microsoft.com/en-us/dotnet/api/system.int32 'System\.Int32')
-
-The number of records per hour to be written into the record\.
-
-#### Returns
-[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The EPW DATA PERIODS header record line\.
-
-<a name='DiGi.EPW.Query.ToString(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.GroundTemperature_)'></a>
-
-## Query\.ToString\(this IList\<GroundTemperature\>\) Method
-
-Converts a list of [GroundTemperature](DiGi.EPW.Classes.md#DiGi.EPW.Classes.GroundTemperature 'DiGi\.EPW\.Classes\.GroundTemperature') instances into their EPW GROUND TEMPERATURES header record line representation\.
-
-```csharp
-public static string ToString(this System.Collections.Generic.IList<DiGi.EPW.Classes.GroundTemperature> groundTemperatures);
-```
-#### Parameters
-
-<a name='DiGi.EPW.Query.ToString(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.GroundTemperature_).groundTemperatures'></a>
-
-`groundTemperatures` [System\.Collections\.Generic\.IList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')[GroundTemperature](DiGi.EPW.Classes.md#DiGi.EPW.Classes.GroundTemperature 'DiGi\.EPW\.Classes\.GroundTemperature')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')
-
-The ground temperatures to be converted\.
-
-#### Returns
-[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The EPW GROUND TEMPERATURES header record line\.
-
-<a name='DiGi.EPW.Query.ToString(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.TypicalExtremePeriod_)'></a>
-
-## Query\.ToString\(this IList\<TypicalExtremePeriod\>\) Method
-
-Converts a list of [TypicalExtremePeriod](DiGi.EPW.Classes.md#DiGi.EPW.Classes.TypicalExtremePeriod 'DiGi\.EPW\.Classes\.TypicalExtremePeriod') instances into their EPW TYPICAL/EXTREME PERIODS header record line representation\.
-
-```csharp
-public static string ToString(this System.Collections.Generic.IList<DiGi.EPW.Classes.TypicalExtremePeriod> typicalExtremePeriods);
-```
-#### Parameters
-
-<a name='DiGi.EPW.Query.ToString(thisSystem.Collections.Generic.IList_DiGi.EPW.Classes.TypicalExtremePeriod_).typicalExtremePeriods'></a>
-
-`typicalExtremePeriods` [System\.Collections\.Generic\.IList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')[TypicalExtremePeriod](DiGi.EPW.Classes.md#DiGi.EPW.Classes.TypicalExtremePeriod 'DiGi\.EPW\.Classes\.TypicalExtremePeriod')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ilist-1 'System\.Collections\.Generic\.IList\`1')
-
-The typical/extreme periods to be converted\.
-
-#### Returns
-[System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The EPW TYPICAL/EXTREME PERIODS header record line\.
