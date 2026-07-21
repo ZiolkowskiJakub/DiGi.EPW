@@ -67,7 +67,7 @@ The output minute \(0\-60\)\.
 
 ## Convert\.ToSystem\_DateTime\(int, int, int, int, int\) Method
 
-Converts EPW datetime components to a standard [System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime') instance 
+Converts EPW datetime components to a standard [System\.DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime 'System\.DateTime') instance
 using [System\.DateTimeKind\.Unspecified](https://learn.microsoft.com/en-us/dotnet/api/system.datetimekind.unspecified 'System\.DateTimeKind\.Unspecified') to avoid timezone and DST issues\.
 
 ```csharp

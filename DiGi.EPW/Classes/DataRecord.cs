@@ -1,5 +1,5 @@
-using DiGi.Weather.Classes;
 using DiGi.EPW.Interfaces;
+using DiGi.Weather.Classes;
 using System;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;

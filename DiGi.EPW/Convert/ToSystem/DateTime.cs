@@ -8,7 +8,7 @@ namespace DiGi.EPW
     public static partial class Convert
     {
         /// <summary>
-        /// Converts EPW datetime components to a standard <see cref="DateTime"/> instance 
+        /// Converts EPW datetime components to a standard <see cref="DateTime"/> instance
         /// using <see cref="DateTimeKind.Unspecified"/> to avoid timezone and DST issues.
         /// </summary>
         /// <param name="year">The year of the record.</param>

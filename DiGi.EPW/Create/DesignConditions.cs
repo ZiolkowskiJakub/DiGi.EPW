@@ -37,7 +37,7 @@ namespace DiGi.EPW
 
             if (values.Length > 1)
             {
-                int.TryParse(values[1], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out numberOfDesignConditions);
+                int.TryParse(values[1], NumberStyles.Any, CultureInfo.InvariantCulture, out numberOfDesignConditions);
             }
 
             if (values.Length > 2)
