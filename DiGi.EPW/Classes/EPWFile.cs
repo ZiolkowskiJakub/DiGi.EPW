@@ -10,7 +10,7 @@ namespace DiGi.EPW.Classes
     /// <summary>
     /// Represents an EnergyPlus Weather (EPW) file and its associated data.
     /// </summary>
-    public class EPWFile : DiGi.Weather.Classes.Weather, IEPWSerializableObject
+    public class EPWFile : Weather.Classes.Weather, IEPWSerializableObject
     {
         [JsonInclude, JsonPropertyName(nameof(Location))]
         private readonly Location? location = null;
