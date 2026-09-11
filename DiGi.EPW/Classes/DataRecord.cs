@@ -319,7 +319,7 @@ namespace DiGi.EPW.Classes
         }
 
         /// <summary>
-        /// Gets the albedo.
+        /// Gets the albedo, dimensionless, as recorded in the EPW file. A raw value equal to <see cref="Constants.MissingValue.Albedo"/> (999) marks a missing reading rather than a measurement.
         /// </summary>
         [JsonIgnore]
         public float Albedo

@@ -611,6 +611,118 @@ public static class Query
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → Query
 ### Methods
 
+<a name='DiGi.EPW.Query.AlbedoValue(thisDiGi.EPW.Classes.DataRecord)'></a>
+
+## Query\.AlbedoValue\(this DataRecord\) Method
+
+Gets the measured albedo, dimensionless, of the given hourly data record\.
+
+Returns null when the raw [Albedo](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord.Albedo 'DiGi\.EPW\.Classes\.DataRecord\.Albedo') equals the EPW missing-value marker [Albedo](DiGi.EPW.Constants.md#DiGi.EPW.Constants.MissingValue.Albedo 'DiGi\.EPW\.Constants\.MissingValue\.Albedo') (999), so a missing reading is distinguishable from a measurement without comparing against a magic number. A raw value of 0 is not a marker and is returned as is; deciding whether a zero albedo is usable belongs to the consumer.
+
+```csharp
+public static System.Nullable<float> AlbedoValue(this DiGi.EPW.Classes.DataRecord dataRecord);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Query.AlbedoValue(thisDiGi.EPW.Classes.DataRecord).dataRecord'></a>
+
+`dataRecord` [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord')
+
+The hourly data record to query\.
+
+#### Returns
+[System\.Nullable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')  
+The measured albedo, dimensionless, or null when the reading is missing\.
+
+#### Exceptions
+
+[System\.ArgumentNullException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentnullexception 'System\.ArgumentNullException')  
+Thrown when the provided data record is null\.
+
+<a name='DiGi.EPW.Query.DiffuseHorizontalRadiationValue(thisDiGi.EPW.Classes.DataRecord)'></a>
+
+## Query\.DiffuseHorizontalRadiationValue\(this DataRecord\) Method
+
+Gets the measured diffuse horizontal radiation, in Wh/m2, of the given hourly data record\.
+
+Returns null when the raw [DiGi\.Weather\.Classes\.WeatherRecord\.DiffuseHorizontalRadiation](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weatherrecord.diffusehorizontalradiation 'DiGi\.Weather\.Classes\.WeatherRecord\.DiffuseHorizontalRadiation') equals the EPW missing-value marker [DiffuseHorizontalRadiation](DiGi.EPW.Constants.md#DiGi.EPW.Constants.MissingValue.DiffuseHorizontalRadiation 'DiGi\.EPW\.Constants\.MissingValue\.DiffuseHorizontalRadiation') (9999), so a missing reading is distinguishable from a measurement without comparing against a magic number.
+
+```csharp
+public static System.Nullable<float> DiffuseHorizontalRadiationValue(this DiGi.EPW.Classes.DataRecord dataRecord);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Query.DiffuseHorizontalRadiationValue(thisDiGi.EPW.Classes.DataRecord).dataRecord'></a>
+
+`dataRecord` [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord')
+
+The hourly data record to query\.
+
+#### Returns
+[System\.Nullable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')  
+The measured diffuse horizontal radiation, in Wh/m2, or null when the reading is missing\.
+
+#### Exceptions
+
+[System\.ArgumentNullException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentnullexception 'System\.ArgumentNullException')  
+Thrown when the provided data record is null\.
+
+<a name='DiGi.EPW.Query.DirectNormalRadiationValue(thisDiGi.EPW.Classes.DataRecord)'></a>
+
+## Query\.DirectNormalRadiationValue\(this DataRecord\) Method
+
+Gets the measured direct normal radiation, in Wh/m2, of the given hourly data record\.
+
+Returns null when the raw [DiGi\.Weather\.Classes\.WeatherRecord\.DirectNormalRadiation](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weatherrecord.directnormalradiation 'DiGi\.Weather\.Classes\.WeatherRecord\.DirectNormalRadiation') equals the EPW missing-value marker [DirectNormalRadiation](DiGi.EPW.Constants.md#DiGi.EPW.Constants.MissingValue.DirectNormalRadiation 'DiGi\.EPW\.Constants\.MissingValue\.DirectNormalRadiation') (9999), so a missing reading is distinguishable from a measurement without comparing against a magic number.
+
+```csharp
+public static System.Nullable<float> DirectNormalRadiationValue(this DiGi.EPW.Classes.DataRecord dataRecord);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Query.DirectNormalRadiationValue(thisDiGi.EPW.Classes.DataRecord).dataRecord'></a>
+
+`dataRecord` [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord')
+
+The hourly data record to query\.
+
+#### Returns
+[System\.Nullable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')  
+The measured direct normal radiation, in Wh/m2, or null when the reading is missing\.
+
+#### Exceptions
+
+[System\.ArgumentNullException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentnullexception 'System\.ArgumentNullException')  
+Thrown when the provided data record is null\.
+
+<a name='DiGi.EPW.Query.GlobalHorizontalRadiationValue(thisDiGi.EPW.Classes.DataRecord)'></a>
+
+## Query\.GlobalHorizontalRadiationValue\(this DataRecord\) Method
+
+Gets the measured global horizontal radiation, in Wh/m2, of the given hourly data record\.
+
+Returns null when the raw [DiGi\.Weather\.Classes\.WeatherRecord\.GlobalHorizontalRadiation](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weatherrecord.globalhorizontalradiation 'DiGi\.Weather\.Classes\.WeatherRecord\.GlobalHorizontalRadiation') equals the EPW missing-value marker [GlobalHorizontalRadiation](DiGi.EPW.Constants.md#DiGi.EPW.Constants.MissingValue.GlobalHorizontalRadiation 'DiGi\.EPW\.Constants\.MissingValue\.GlobalHorizontalRadiation') (9999), so a missing reading is distinguishable from a measurement without comparing against a magic number.
+
+```csharp
+public static System.Nullable<float> GlobalHorizontalRadiationValue(this DiGi.EPW.Classes.DataRecord dataRecord);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Query.GlobalHorizontalRadiationValue(thisDiGi.EPW.Classes.DataRecord).dataRecord'></a>
+
+`dataRecord` [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord')
+
+The hourly data record to query\.
+
+#### Returns
+[System\.Nullable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')  
+The measured global horizontal radiation, in Wh/m2, or null when the reading is missing\.
+
+#### Exceptions
+
+[System\.ArgumentNullException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentnullexception 'System\.ArgumentNullException')  
+Thrown when the provided data record is null\.
+
 <a name='DiGi.EPW.Query.Name(thisDiGi.EPW.Classes.EPWFile)'></a>
 
 ## Query\.Name\(this EPWFile\) Method
@@ -639,3 +751,31 @@ Thrown when the provided EPW file is null\.
 
 [System\.ArgumentException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentexception 'System\.ArgumentException')  
 Thrown when the EPW file does not have a valid location\.
+
+<a name='DiGi.EPW.Query.SnowDepthValue(thisDiGi.EPW.Classes.DataRecord)'></a>
+
+## Query\.SnowDepthValue\(this DataRecord\) Method
+
+Gets the measured snow depth, in cm, of the given hourly data record\.
+
+Returns null when the raw [DiGi\.Weather\.Classes\.WeatherRecord\.SnowDepth](https://learn.microsoft.com/en-us/dotnet/api/digi.weather.classes.weatherrecord.snowdepth 'DiGi\.Weather\.Classes\.WeatherRecord\.SnowDepth') equals the EPW missing-value marker [SnowDepth](DiGi.EPW.Constants.md#DiGi.EPW.Constants.MissingValue.SnowDepth 'DiGi\.EPW\.Constants\.MissingValue\.SnowDepth') (999), so a missing reading is distinguishable from a measurement without comparing against a magic number.
+
+```csharp
+public static System.Nullable<float> SnowDepthValue(this DiGi.EPW.Classes.DataRecord dataRecord);
+```
+#### Parameters
+
+<a name='DiGi.EPW.Query.SnowDepthValue(thisDiGi.EPW.Classes.DataRecord).dataRecord'></a>
+
+`dataRecord` [DataRecord](DiGi.EPW.Classes.md#DiGi.EPW.Classes.DataRecord 'DiGi\.EPW\.Classes\.DataRecord')
+
+The hourly data record to query\.
+
+#### Returns
+[System\.Nullable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.nullable-1 'System\.Nullable\`1')  
+The measured snow depth, in cm, or null when the reading is missing\.
+
+#### Exceptions
+
+[System\.ArgumentNullException](https://learn.microsoft.com/en-us/dotnet/api/system.argumentnullexception 'System\.ArgumentNullException')  
+Thrown when the provided data record is null\.

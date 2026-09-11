@@ -145,3 +145,81 @@ public const string TypicalExtremePeriods = "TYPICAL/EXTREME PERIODS";
 
 #### Field Value
 [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')
+
+<a name='DiGi.EPW.Constants.MissingValue'></a>
+
+## MissingValue Class
+
+Provides constant definitions for the missing\-value markers that EPW numeric fields carry instead of a measurement\.
+
+```csharp
+public static class MissingValue
+```
+
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → MissingValue
+### Fields
+
+<a name='DiGi.EPW.Constants.MissingValue.Albedo'></a>
+
+## MissingValue\.Albedo Field
+
+The value 999 that marks a missing albedo reading in an EPW file\.
+
+```csharp
+public const float Albedo = 999;
+```
+
+#### Field Value
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
+
+<a name='DiGi.EPW.Constants.MissingValue.DiffuseHorizontalRadiation'></a>
+
+## MissingValue\.DiffuseHorizontalRadiation Field
+
+The value 9999 that marks a missing diffuse horizontal radiation reading in an EPW file\.
+
+```csharp
+public const float DiffuseHorizontalRadiation = 9999;
+```
+
+#### Field Value
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
+
+<a name='DiGi.EPW.Constants.MissingValue.DirectNormalRadiation'></a>
+
+## MissingValue\.DirectNormalRadiation Field
+
+The value 9999 that marks a missing direct normal radiation reading in an EPW file\.
+
+```csharp
+public const float DirectNormalRadiation = 9999;
+```
+
+#### Field Value
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
+
+<a name='DiGi.EPW.Constants.MissingValue.GlobalHorizontalRadiation'></a>
+
+## MissingValue\.GlobalHorizontalRadiation Field
+
+The value 9999 that marks a missing global horizontal radiation reading in an EPW file\.
+
+```csharp
+public const float GlobalHorizontalRadiation = 9999;
+```
+
+#### Field Value
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')
+
+<a name='DiGi.EPW.Constants.MissingValue.SnowDepth'></a>
+
+## MissingValue\.SnowDepth Field
+
+The value 999 that marks a missing snow depth reading in an EPW file\.
+
+```csharp
+public const float SnowDepth = 999;
+```
+
+#### Field Value
+[System\.Single](https://learn.microsoft.com/en-us/dotnet/api/system.single 'System\.Single')

@@ -404,7 +404,7 @@ public float AerosolOpticalDepth { get; }
 
 ## DataRecord\.Albedo Property
 
-Gets the albedo\.
+Gets the albedo, dimensionless, as recorded in the EPW file\. A raw value equal to [Albedo](DiGi.EPW.Constants.md#DiGi.EPW.Constants.MissingValue.Albedo 'DiGi\.EPW\.Constants\.MissingValue\.Albedo') \(999\) marks a missing reading rather than a measurement\.
 
 ```csharp
 public float Albedo { get; }
